@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply font-sans antialiased bg-slate-950 text-slate-100;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 
+           placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 
+           focus:border-transparent transition-all duration-200 text-sm;
+  }
+
+  .input-field:hover {
+    @apply border-slate-600;
+  }
+
+  .input-error {
+    @apply border-red-500 focus:ring-red-500;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-slate-300 mb-1.5;
+  }
+
+  .error-text {
+    @apply text-red-400 text-xs mt-1.5 flex items-center gap-1;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold 
+           px-8 py-3.5 rounded-xl hover:from-primary-600 hover:to-accent-600 
+           transition-all duration-200 shadow-lg shadow-primary-500/25 
+           disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-slate-900;
+  }
+
+  .card {
+    @apply bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl;
+  }
+
+  .skill-tag {
+    @apply inline-flex items-center gap-1.5 bg-primary-500/20 text-primary-300 
+           border border-primary-500/30 px-3 py-1 rounded-full text-sm font-medium;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
